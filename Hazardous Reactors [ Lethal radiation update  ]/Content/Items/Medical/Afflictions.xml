@@ -5,7 +5,7 @@
     name=""
     identifier="dnadamage"
     description=""
-    causeofdeathdescription="DNA damage caused total vital failure."
+    causeofdeathdescription=""
     selfcauseofdeathdescription=""
     limbspecific="false"
     indicatorlimb="Torso"
@@ -37,7 +37,7 @@
     description=""
     type="poison"
     causeofdeathdescription=""
-    selfcauseofdeathdescription="You have died of radiation exposure"
+    selfcauseofdeathdescription=""
     limbspecific="false"
     indicatorlimb="Torso"
     showiconthreshold="101"
@@ -186,9 +186,29 @@
     treatmentthreshold="0"
     maxstrength="100"
     grainburst="3">
-    <Effect minstrength="0" maxstrength="100" strengthchange="-200">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-100">
       <StatusEffect target="Character" delay="0.5" stackable="false" >
-        <Affliction identifier="burn" amount="1" />
+        <Affliction identifier="burn" amount="5" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
+  </Affliction>
+  
+  <Affliction
+    name="burn emitter meltdown with incendium"
+    identifier="burn_emitter_with_incendium"
+    description="cause burn damage"
+    limbspecific="false"
+    indicatorlimb="Torso"
+    showiconthreshold="110"
+    showinhealthscannerthreshold="110"
+    karmachangeonapplied="-1"
+    treatmentthreshold="0"
+    maxstrength="100"
+    grainburst="3">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-100">
+      <StatusEffect target="Character" delay="0.5" stackable="false" >
+        <Affliction identifier="burn" amount="10" />
       </StatusEffect>
     </Effect>
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
@@ -209,7 +229,7 @@
     grainburst="3">
     <Effect minstrength="0" maxstrength="100" strengthchange="-200">
       <StatusEffect target="Character" delay="0.5" stackable="false">
-        <Affliction identifier="burn" amount="0.6" />
+        <Affliction identifier="burn" amount="10" />
       </StatusEffect>
     </Effect>
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
@@ -230,7 +250,7 @@
     grainburst="3">
     <Effect minstrength="0" maxstrength="100" strengthchange="-100">
       <StatusEffect target="Character" delay="0.5" stackable="false">
-        <Affliction identifier="burn" amount="4" />
+        <Affliction identifier="burn" amount="25" />
       </StatusEffect>
     </Effect>
     <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
@@ -404,6 +424,7 @@
   
   
   <Affliction
+  
     name=""
     identifier="hazardexposure"
     description=""
@@ -414,7 +435,7 @@
     treatmentthreshold="1000"
     showiconthreshold="1"
     showinhealthscannerthreshold="110"
-    iconcolors="255,142,0;255,142,0;255,142,0;255,142,0">
+    iconcolors="255,255,0,255">>
     <Effect minstrength="0" maxstrength="10" strengthchange="-4" />
     <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="512,0,128,128" color="139,60,42,255" origin="0,0" />
   </Affliction>
