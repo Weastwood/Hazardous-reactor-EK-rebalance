@@ -13,18 +13,28 @@
     treatmentthreshold="0"
     showiconthreshold="50"
     showinhealthscannerthreshold="15">
-    <Effect minstrength="0" maxstrength="60" minvitalitydecrease="0" maxvitalitydecrease="0" minchromaticaberration="0.0" maxchromaticaberration="2.5" />
-    <Effect minstrength="60" maxstrength="80" minvitalitydecrease="0" maxvitalitydecrease="100" minchromaticaberration="2.5" maxchromaticaberration="5">
-      <StatusEffect target="Character" targetlimb="Torso" >>
+    <Effect minstrength="0" maxstrength="60" minvitalitydecrease="0" maxvitalitydecrease="40" minchromaticaberration="0.0" maxchromaticaberration="2.5" />
+    <Effect minstrength="60" maxstrength="80" minvitalitydecrease="40" maxvitalitydecrease="70" minchromaticaberration="2.5" maxchromaticaberration="5">
+      <StatusEffect target="Character" targetlimb="Torso" delay="1" stackable="false">
         <Affliction identifier="bloodvomit" amount="10" />
-        <Affliction identifier="internaldamage" amount="6" />
+        <Affliction identifier="internaldamage" amount="5" />
       </StatusEffect>
     </Effect>
-    <Effect minstrength="80" maxstrength="100" minvitalitydecrease="60" maxvitalitydecrease="0" minchromaticaberration="5" maxchromaticaberration="5">
-      <StatusEffect target="Character">
-        <Affliction identifier="organdamage" amount="5" />
-        <Affliction identifier="internaldamage" amount="5" />
+    <Effect minstrength="80" maxstrength="99"  minvitalitydecrease="70" maxvitalitydecrease="99" minchromaticaberration="5" maxchromaticaberration="5">
+      <StatusEffect target="Character" delay="1" stackable="false">
+        <Affliction identifier="bloodvomit" amount="10" />
+        <Affliction identifier="organdamage" amount="15" />
+        <Affliction identifier="internaldamage" amount="10" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="99" maxstrength="100" minvitalitydecrease="100" maxvitalitydecrease="100" minchromaticaberration="5" maxchromaticaberration="5">
+      <StatusEffect target="Character" >
         <Affliction identifier="deathpuke" amount="100" />
+      </StatusEffect>
+      
+      <StatusEffect target="Character" delay="10" stackable="false">
+        <Affliction identifier="organdamage" amount="100" />
+        <Affliction identifier="internaldamage" amount="100" />
       </StatusEffect>
     </Effect>
     <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="128,0,128,128" color="139,60,42,255" origin="0,0" />
@@ -282,10 +292,10 @@
   <Affliction
     name="Nausea"
     identifier="nausea"
-    description="The skin is clammy and the patient is vomiting periodically."
+    description=""
     type="nausea"
-    causeofdeathdescription="Choked on vomit."
-    selfcauseofdeathdescription="You have choked on your own vomit."
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
     limbspecific="false"
     maxstrength="100"
     treatmentthreshold="1000"
@@ -293,15 +303,14 @@
     damageoverlayalpha="101"
     showiconthreshold="101"
     showinhealthscannerthreshold="0">
-    <Effect minstrength="0" maxstrength="100" strengthchange="-1.0" minfacetint="255,255,255,0" maxfacetint="255,255,255,100">
-      <StatusEffect target="Character" SpeedMultiplier="0.6" setvalue="true" />
+    
+    <Effect minstrength="0" maxstrength="100" strengthchange="-1.0" minfacetint="255,255,255,0" maxfacetint="255,255,255,100" minspeedmultiplier="1.0" maxspeedmultiplier="0.6" >
       <StatusEffect type="Always" target="Character">
         <Conditional bloodvomit="neq 0" />
         <Reduceaffliction identifier="nausea" strength="100" />
       </StatusEffect>
     </Effect>
     <PeriodicEffect mininterval="20" maxinterval="20">
-      <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.7" />
       <StatusEffect target="Character" comparison="and">
         <Conditional ishuman="true" />
         <Conditional ismale="true" />
@@ -317,7 +326,6 @@
         <Sound file="Content/Sounds/HUMAN_chokeFemale3.ogg" />
       </StatusEffect>
       <StatusEffect target="Character">
-        <Affliction identifier="stun" strength="0.1" />
         <Affliction identifier="organdamage" strength="0.5" />
       </StatusEffect>
       <StatusEffect target="Character" targetlimbs="Head" duration="1">
@@ -389,8 +397,7 @@
     showiconthreshold="101"
     showinhealthscannerthreshold="101">
     <Effect minstrength="0" maxstrength="100" strengthchange="-1.0" />
-    <PeriodicEffect mininterval="20" maxinterval="25">
-      <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.0" />
+    <PeriodicEffect mininterval="15" maxinterval="20">
       <StatusEffect target="Character" comparison="and">
         <Conditional ishuman="true" />
         <Conditional ismale="true" />
@@ -406,9 +413,8 @@
         <Sound file="%ModDir%/Content/Items/Medical/HUMAN_chokeFemale3.ogg" />
       </StatusEffect>
       <StatusEffect target="Character">
-        <Affliction identifier="stun" strength="0.1" />
         <Affliction identifier="organdamage" strength="0.5" />
-        <Affliction identifier="bloodloss" strength="3" />
+        <Affliction identifier="bloodloss" strength="5" />
       </StatusEffect>
       <StatusEffect target="Character">
         <Reduceaffliction identifier="bloodvomit" ammount="10" />

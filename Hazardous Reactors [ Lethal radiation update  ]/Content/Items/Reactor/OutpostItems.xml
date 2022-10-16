@@ -354,6 +354,9 @@
       <StatusEffect type="Always" target="This" IsOn="true">
         <Conditional targetitem="outpostreactor" condition="lte 25" />
       </StatusEffect>
+      <StatusEffect type="Always" target="This" IsOn="false" >
+      <Conditional targetitem="reactor" condition="gt 25" />
+      </StatusEffect>
     </LightComponent>
     
     <!-- CONNECTION PANNEL + WIRING FAILURE -->

@@ -16,7 +16,7 @@
   -->
 
   <!-- Uranium Fuel Rod (Inactive) -->
-  <Item name="" category="fuel" identifier="fuelrod" Tags="reactorfuel" maxstacksize="4" scale="0.5" health="90" pickdistance="150" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+  <Item name="" category="fuel" identifier="fuelrod" Tags="reactorfuel" maxstacksize="4" scale="0.5" health="90" pickdistance="150" cargocontaineridentifier="fuelcrate" impactsoundtag="impact_metal_light">
     <!-- Spawn/PrefContainer(Vanilla) & Store Availability-->
     <PreferredContainer primary="reactorcab"/>
     <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1"/>
@@ -47,7 +47,7 @@
       <Item identifier="uranium" mincondition="0.95" />
       <Item identifier="deconcontaminationemitter" />
     </Deconstruct>
-
+    
     <!-- Cheaper Recipe, No Recycling (for now) -->
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredSkill identifier="electrical" level="25" />
@@ -59,6 +59,8 @@
     <!-- Holding/Throwing & Status Effect -->
     <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
       <!-- Check every 5s, if not full condition spawn active rod?-->
+      <!-- ON SPAWN RETURN CONDITION TO 100% -->
+      <StatusEffect type="OnSpawn" target="This" condition="500" delay="3"/>
     </Throwable>
   </Item>
 
@@ -167,7 +169,7 @@
   </Item>
 
   <!-- Thorium Fuel Rod (Inactive) -->
-  <Item name="" category="fuel" identifier="thoriumfuelrod" Tags="reactorfuel" maxstacksize="4" cargocontaineridentifier="metalcrate" scale="0.5" health="300" pickdistance="150" impactsoundtag="impact_metal_light">
+  <Item name="" category="fuel" identifier="thoriumfuelrod" Tags="reactorfuel" maxstacksize="4" cargocontaineridentifier="fuelcrate" scale="0.5" health="300" pickdistance="150" impactsoundtag="impact_metal_light">
     <!-- Spawn/PrefContainer(Vanilla) & Store Availability-->
     <PreferredContainer primary="reactorcab" />
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.1"/>
@@ -209,6 +211,8 @@
     <!-- Holding/Throwing & Status Effect -->
     <Throwable characterusable="false" slots="RightHand,LeftHand" throwforce="4.0" holdpos="0,0" handle1="0,0" msg="ItemMsgPickUpSelect">
       <!-- Check every 5s, if not full condition spawn active rod?-->
+      <!-- ON SPAWN RETURN CONDITION TO 100% -->
+      <StatusEffect type="OnSpawn" target="This" condition="500" delay="3"/>
     </Throwable>
   </Item>
 
@@ -368,7 +372,7 @@
     -->
 
   <!-- Fulgurium Fuel Rod (Active) -->
-  <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="reactorfuel" maxstacksize="1" scale="0.5" health="1500" cargocontaineridentifier="metalcrate" pickdistance="150" impactsoundtag="impact_metal_light">
+  <Item name="" category="fuel" identifier="fulguriumfuelrod" Tags="reactorfuel" maxstacksize="1" scale="0.5" health="1500" cargocontaineridentifier="fuelcrate" pickdistance="150" impactsoundtag="impact_metal_light">
     <!-- Spawn/PrefContainer(Vanilla) & Store Availability || Removed to be more Bot Friendly
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab" amount="1" spawnprobability="0.2"/>
     <PreferredContainer secondary="beaconengcab" amount="1" spawnprobability="0.05"/>
@@ -774,7 +778,7 @@
 
 </Override>
   <Override>
-    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="reactorfuel" maxstacksize="8" impacttolerance="3" description="" cargocontaineridentifier="metalcrate" health="750" scale="0.5">
+    <Item name="" identifier="fulguriumfuelrodvolatile" category="fuel" Tags="reactorfuel" maxstacksize="8" impacttolerance="3" description="" cargocontaineridentifier="fuelcrate" health="750" scale="0.5">
       <!-- Pricing -->
       <Price baseprice="400" soldeverywhere="false">
         <Price locationtype="outpost" multiplier="0" sold="false" />
