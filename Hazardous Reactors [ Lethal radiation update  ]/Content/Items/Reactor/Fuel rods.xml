@@ -881,15 +881,10 @@
         </StatusEffect>
     
     
-        <!-- Rapidely damage junction box overtime-->
+        <!-- Damage nearby junction box -->
     
-    
-        <StatusEffect type="OnNotContained" target="NearbyItems" range="6000.0" targettags="junctionbox" stackable="false" delay="0.5" condition="-20">
-          <ParticleEmitter particle="ElectricShock" distancemax="6" particlespersecond="2.0" particleamount="2" emitinterval="2.1" anglemin="0" anglemax="360" scalemin="0.1" scalemax="0.2" />
-        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="NearbyItems" range="1500.0" targettags="junctionbox" stackable="false" delay="0.5" condition="-20"/>
 
-    
-    
         <!-- Fancy electrical spark + sound effect -->
     
     
