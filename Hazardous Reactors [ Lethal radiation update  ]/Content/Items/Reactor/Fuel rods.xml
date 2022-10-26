@@ -1090,7 +1090,8 @@
   </Item>
   
   <Item name="" category="weapon" identifier="nukerod" Tags="smallitem" impacttolerance="3" maxstacksize="8" scale="0.5" health="1" impactsoundtag="impact_metal_heavy" description="">
-    <PreferredContainer primary="securesteelcabinetwrecked" maxamount="1" spawnprobability="0.05"/>
+    <PreferredContainer primary="steelcabinetwrecked" maxamount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="mediumsteelcabinetwrecked" maxamount="1" spawnprobability="0.05"/>
     <Fabricate suitablefabricators="fabricator" requiredtime="15">
       <RequiredItem identifier="supercritical_fulgurium" mincondition="0.5" usecondition="false" />
       <RequiredItem identifier="fueltrasnportcylinderreinforced" />
@@ -1099,7 +1100,6 @@
       <RequiredItem identifier="supercritical_incendium" mincondition="0.5" usecondition="false" />
       <RequiredItem identifier="fueltrasnportcylinderreinforced" />
     </Fabricate>
-  
   
     <!-- Texture and light -->
   
@@ -1139,7 +1139,8 @@
   
   
   <Item name="" category="weapon" identifier="nukerodenhanced" Tags="smallitem" impacttolerance="3" maxstacksize="8" scale="0.5" health="1" impactsoundtag="impact_metal_heavy" description="">
-    <PreferredContainer primary="securesteelcabinetwrecked" maxamount="1" spawnprobability="0.05"/>
+    <PreferredContainer primary="steelcabinetwrecked" maxamount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="mediumsteelcabinetwrecked" maxamount="1" spawnprobability="0.05"/>
     <Fabricate suitablefabricators="fabricator" requiredtime="160">
       <RequiredSkill identifier="mechanical" level="40" />
       <RequiredSkill identifier="electrical" level="40" />

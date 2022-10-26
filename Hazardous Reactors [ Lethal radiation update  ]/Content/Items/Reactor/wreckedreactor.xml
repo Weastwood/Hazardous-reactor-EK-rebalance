@@ -14,12 +14,12 @@
         <ParticleEmitter particle="swirlysmoke" particlespersecond="3" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
         <Conditional condition="e 0" />
       </StatusEffect>
-      <StatusEffect type="Always" target="This" stackable="false" delay="0.5">
+      <StatusEffect type="Always" target="This" stackable="false" delay="1">
         <Conditional condition="e 0" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false">
-          <Affliction identifier="radiationsickness" strength="20" />
+          <Affliction identifier="radiationsickness" strength="40" />
           <Affliction identifier="radiationgeiger" strength="20" />
-          <Affliction identifier="contamination" strength="10" />
+          <Affliction identifier="contamination" strength="20" />
         </Explosion>
       </StatusEffect>
     </ItemContainer>

@@ -11,30 +11,31 @@
     indicatorlimb="Torso"
     maxstrength="100"
     treatmentthreshold="0"
-    showiconthreshold="50"
+    showiconthreshold="60"
     showinhealthscannerthreshold="15">
-    <Effect minstrength="0" maxstrength="60" minvitalitydecrease="0" maxvitalitydecrease="40" minchromaticaberration="0.0" maxchromaticaberration="2.5" />
-    <Effect minstrength="60" maxstrength="80" minvitalitydecrease="40" maxvitalitydecrease="70" minchromaticaberration="2.5" maxchromaticaberration="5">
+    <Effect minstrength="0" maxstrength="60" minvitalitydecrease="0" maxvitalitydecrease="20" minchromaticaberration="0.0" maxchromaticaberration="2.5" />
+    <Effect minstrength="60" maxstrength="80" minvitalitydecrease="20" maxvitalitydecrease="40" minchromaticaberration="2.5" maxchromaticaberration="5">
       <StatusEffect target="Character" targetlimb="Torso" delay="1" stackable="false">
-        <Affliction identifier="bloodvomit" amount="10" />
         <Affliction identifier="internaldamage" amount="5" />
       </StatusEffect>
-    </Effect>
-    <Effect minstrength="80" maxstrength="99"  minvitalitydecrease="70" maxvitalitydecrease="99" minchromaticaberration="5" maxchromaticaberration="5">
-      <StatusEffect target="Character" delay="1" stackable="false">
-        <Affliction identifier="bloodvomit" amount="10" />
-        <Affliction identifier="organdamage" amount="15" />
-        <Affliction identifier="internaldamage" amount="10" />
+      <StatusEffect target="Character" stackable="false">
+        <Affliction identifier="bloodvomit" amount="100" />
       </StatusEffect>
     </Effect>
-    <Effect minstrength="99" maxstrength="100" minvitalitydecrease="100" maxvitalitydecrease="100" minchromaticaberration="5" maxchromaticaberration="5">
-      <StatusEffect target="Character" >
-        <Affliction identifier="deathpuke" amount="100" />
+    <Effect minstrength="80" maxstrength="99"  minvitalitydecrease="40" maxvitalitydecrease="60" minchromaticaberration="5" maxchromaticaberration="5">
+      <StatusEffect target="Character" delay="1" stackable="false">
+        <Affliction identifier="organdamage" amount="13" />
+        <Affliction identifier="internaldamage" amount="8" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="99" maxstrength="100" minvitalitydecrease="60" maxvitalitydecrease="70" minchromaticaberration="5" maxchromaticaberration="5">
+      <StatusEffect target="Character" setvalue="true" stackable="false">
+        <Affliction identifier="deathpuke" amount="1" />
       </StatusEffect>
       
       <StatusEffect target="Character" delay="10" stackable="false">
-        <Affliction identifier="organdamage" amount="100" />
-        <Affliction identifier="internaldamage" amount="100" />
+        <Affliction identifier="organdamage" amount="10000" />
+        <Affliction identifier="internaldamage" amount="10000" />
       </StatusEffect>
     </Effect>
     <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="128,0,128,128" color="139,60,42,255" origin="0,0" />
@@ -58,39 +59,45 @@
     <!-- Cause nausea, burns & organ damage DNA damage depending on strength + radiation geiger -->
     <Effect minstrength="5" maxstrength="25" strengthchange="-0.05" minchromaticaberration="0.0" maxchromaticaberration="0" />
     <Effect minstrength="25" maxstrength="50" strengthchange="-0.05" disabledeltatime="true">
-      <StatusEffect target="Character">
-        <Affliction identifier="dnadamage" amount="0.1" />
+      <StatusEffect target="Character" delay="1" stackable="false" >
+        <Affliction identifier="dnadamage" amount="1" />
+      </StatusEffect>
+      <StatusEffect target="Character" >
         <Affliction identifier="radiationgeiger" amount="2" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="50" maxstrength="75" strengthchange="-0.05" MinScreenBlur="0" MaxScreenBlur="0.25">
-      <StatusEffect target="Character">
-        <!-- Consider removing this lethal radiation check by incorporating this dmg into lethal-->
-        <Conditional lethalradiation="lt 60" />
-        <Affliction identifier="nausea" amount="1" />
-        <Affliction identifier="dnadamage" amount="0.24" />
-        <Affliction identifier="radiationgeiger" amount="3" />
+      <StatusEffect target="Character" delay="1" stackable="false" >
+        <Affliction identifier="nausea" amount="10" />
+        <Affliction identifier="dnadamage" amount="1" />
       </StatusEffect>
-    </Effect>
-    <Effect minstrength="75" maxstrength="90" strengthchange="-0.05" minchromaticaberration="1" maxchromaticaberration="3" mingrainstrength="0.0" maxgrainstrength="1" MinScreenBlur="0.25" MaxScreenBlur="0.6">
-      <StatusEffect target="Character">
-        <Conditional lethalradiation="lt 60" />
-        <Affliction identifier="nausea" amount="1" />
-        <Affliction identifier="burn" amount="0.006" />
-        <Affliction identifier="dnadamage" amount="0.004" />
+      <StatusEffect target="Character" >
         <Affliction identifier="radiationgeiger" amount="4" />
       </StatusEffect>
     </Effect>
-    <Effect minstrength="90" maxstrength="100" strengthchange="-0.05" minchromaticaberration="3" maxchromaticaberration="5" mingrainstrength="1" maxgrainstrength="2" MinScreenBlur="0.6" MaxScreenBlur="0.75" >
-      <StatusEffect target="Character">
-        <Conditional lethalradiation="lt 60" />
-        <Affliction identifier="burn" amount="0.01" />
-        <Affliction identifier="organdamage" amount="0.01" />
-        <Affliction identifier="internaldamage" amount="0.01" />
-        <Affliction identifier="dnadamage" amount="0.04" />
-        <Affliction identifier="bloodvomit" amount="1" />
-        <Affliction identifier="lethalradiation" amount="0.5" />
+    <Effect minstrength="75" maxstrength="90" strengthchange="-0.05" minchromaticaberration="1" maxchromaticaberration="3" mingrainstrength="0.0" maxgrainstrength="1" MinScreenBlur="0.25" MaxScreenBlur="0.6">
+      <StatusEffect target="Character" delay="1" stackable="false" >
+        <Affliction identifier="nausea" amount="10" />
+        <Affliction identifier="burn" amount="1" />
+        <Affliction identifier="dnadamage" amount="2" />
+      </StatusEffect>
+      <StatusEffect target="Character" >
         <Affliction identifier="radiationgeiger" amount="5" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="90" maxstrength="100" strengthchange="-0.05" minchromaticaberration="3" maxchromaticaberration="5" mingrainstrength="1" maxgrainstrength="2" MinScreenBlur="0.6" MaxScreenBlur="0.75" >
+      <StatusEffect target="Character" delay="1" stackable="false" >
+        <Affliction identifier="burn" amount="4" />
+        <Affliction identifier="organdamage" amount="2" />
+        <Affliction identifier="internaldamage" amount="1" />
+        <Affliction identifier="dnadamage" amount="3" />
+        <Affliction identifier="lethalradiation" amount="40" />
+      </StatusEffect>
+      <StatusEffect target="Character" >
+        <Affliction identifier="radiationgeiger" amount="10" />
+      </StatusEffect>
+      <StatusEffect target="Character" stackable="false">
+        <Affliction identifier="bloodvomit" amount="100" />
       </StatusEffect>
     </Effect>
     <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="128,0,128,128" color="139,60,42,255" origin="0,0" />
@@ -147,38 +154,54 @@
     grainburst="3">
     <!-- Radioactive dust inhaled, have fun -->
     <Effect minstrength="5" maxstrength="25">
-      <StatusEffect target="Character">
-        <Affliction identifier="radiationsickness" amount="0.4" />
-        <Affliction identifier="radiationgeiger" amount="2" />
+      <StatusEffect target="Character" delay="1" stackable="false" >
+        <Affliction identifier="radiationsickness" amount="70" />
+      </StatusEffect>
+      <StatusEffect target="Character" >
+        <Affliction identifier="radiationgeiger" amount="1" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="25" maxstrength="50">
-      <StatusEffect target="Character">
-        <Affliction identifier="radiationsickness" amount="0.6" />
-        <Affliction identifier="dnadamage" amount="0.03" />
-        <Affliction identifier="radiationgeiger" amount="4" />
+      <StatusEffect target="Character" delay="1" stackable="false" >
+        <Affliction identifier="radiationsickness" amount="90" />
+        <Affliction identifier="dnadamage" amount="1" />
+      </StatusEffect>
+      <StatusEffect target="Character" >
+        <Affliction identifier="radiationgeiger" amount="2" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="50" maxstrength="75">
-      <StatusEffect target="Character">
-        <Affliction identifier="radiationsickness" amount="0.8" />
-        <Affliction identifier="dnadamage" amount="0.05" />
-        <Affliction identifier="radiationgeiger" amount="6" />
+      <StatusEffect target="Character" delay="1" stackable="false" >
+        <Affliction identifier="radiationsickness" amount="140" />
+        <Affliction identifier="dnadamage" amount="2" />
+      </StatusEffect>
+      <StatusEffect target="Character" >
+        <Affliction identifier="radiationgeiger" amount="4" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="75" maxstrength="95">
-      <StatusEffect target="Character">
-        <Affliction identifier="radiationsickness" amount="1" />
-        <Affliction identifier="dnadamage" amount="0.1" />
-         <Affliction identifier="radiationgeiger" amount="8" />
+      <StatusEffect target="Character" delay="1" stackable="false" >
+        <Affliction identifier="radiationsickness" amount="480" />
+        <Affliction identifier="dnadamage" amount="3" />
+      </StatusEffect>
+      <StatusEffect target="Character" >
+         <Affliction identifier="radiationgeiger" amount="6" />
+      </StatusEffect>
+      <StatusEffect target="Character" stackable="false">
+        <Affliction identifier="bloodvomit" amount="100" />
       </StatusEffect>
     </Effect>
     <Effect minstrength="95" maxstrength="100">
-      <StatusEffect target="Character">
-        <Affliction identifier="radiationsickness" amount="1.2" />
-        <Affliction identifier="dnadamage" amount="0.04" />
-        <Affliction identifier="lethalradiation" amount="0.16" />
-        <Affliction identifier="radiationgeiger" amount="10" />
+      <StatusEffect target="Character" delay="1" stackable="false" >
+        <Affliction identifier="radiationsickness" amount="220" />
+        <Affliction identifier="dnadamage" amount="4" />
+        <Affliction identifier="lethalradiation" amount="25" />
+      </StatusEffect>
+      <StatusEffect target="Character" >
+        <Affliction identifier="radiationgeiger" amount="8" />
+      </StatusEffect>
+      <StatusEffect target="Character" stackable="false">
+        <Affliction identifier="bloodvomit" amount="100" />
       </StatusEffect>
     </Effect>
     <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="256,0,128,128" color="139,60,42,255" origin="0,0" />
@@ -339,12 +362,12 @@
 </Override>
   
   <Affliction
-    name="Total vital failure"
+    name=""
     identifier="deathpuke"
-    description="Patient vomited part of its organs and most of its blood, dying in the process."
+    description=""
     type="nausea"
-    causeofdeathdescription="Vomited most organs."
-    selfcauseofdeathdescription="You puked most of your organs and blood out."
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
     limbspecific="false"
     maxstrength="100"
     treatmentthreshold="1000"
@@ -368,10 +391,12 @@
         <Sound file="%ModDir%/Content/Items/Medical/HUMAN_chokeFemale2.ogg" />
         <Sound file="%ModDir%/Content/Items/Medical/HUMAN_chokeFemale3.ogg" />
       </StatusEffect>
-      <StatusEffect target="Character">
-        <Affliction identifier="stun" strength="3" />
+      <StatusEffect target="Character" >
         <Affliction identifier="organdamage" strength="0.5" />
         <Affliction identifier="bloodloss" strength="1" />
+      </StatusEffect>
+      <StatusEffect target="Character" setvalue="true">
+        <Affliction identifier="stun" strength="3" />
       </StatusEffect>
       <StatusEffect target="Character" targetlimbs="Head" duration="1">
         <ParticleEmitter particle="bloodvomitsplash" copyentityangle="true" anglemin="-10" anglemax="10" particlespersecond="50" velocitymin="50" velocitymax="200" scalemin="0.1" scalemax="0.2" />
@@ -383,12 +408,12 @@
   </Affliction>
   
   <Affliction
-    name="Blood vomit"
+    name=""
     identifier="bloodvomit"
-    description="Patient is vomiting blood."
+    description=""
     type=""
-    causeofdeathdescription="Vomited most organs."
-    selfcauseofdeathdescription="You puked most of your blood out."
+    causeofdeathdescription=""
+    selfcauseofdeathdescription=""
     limbspecific="false"
     maxstrength="100"
     treatmentthreshold="1000"
@@ -396,7 +421,18 @@
     damageoverlayalpha="1"
     showiconthreshold="101"
     showinhealthscannerthreshold="101">
-    <Effect minstrength="0" maxstrength="100" strengthchange="-1.0" />
+    
+    <Effect minstrength="0" maxstrength="100" >
+      <StatusEffect target="Character" comparison="Or" delay="10"  stackable="false" > 
+        <Conditional lethalradiation="gte 60" />
+        <Conditional dnadamage="gte 80" />
+        <Conditional contamination="gte 75" />
+        <Conditional radiationsickness="gte 90" />
+        <Affliction identifier="bloodvomit" strength="100" />
+      </StatusEffect>
+    </Effect>
+
+    
     <PeriodicEffect mininterval="15" maxinterval="20">
       <StatusEffect target="Character" comparison="and">
         <Conditional ishuman="true" />
@@ -415,9 +451,7 @@
       <StatusEffect target="Character">
         <Affliction identifier="organdamage" strength="0.5" />
         <Affliction identifier="bloodloss" strength="5" />
-      </StatusEffect>
-      <StatusEffect target="Character">
-        <Reduceaffliction identifier="bloodvomit" ammount="10" />
+        <ReduceAffliction identifier="bloodloss" strength="50" />
       </StatusEffect>
       <StatusEffect target="Character" targetlimbs="Head" duration="1">
         <ParticleEmitter particle="bloodvomitsplash" copyentityangle="true" anglemin="-10" anglemax="10" particlespersecond="50" velocitymin="50" velocitymax="200" scalemin="0.1" scalemax="0.2" />
@@ -446,6 +480,8 @@
     <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="512,0,128,128" color="139,60,42,255" origin="0,0" />
   </Affliction>
   
+        <!-- UNUSED 
+  
   <Affliction
     name=""
     identifier="radiationexposure"
@@ -461,6 +497,8 @@
     <Effect minstrength="0" maxstrength="10" strengthchange="-4" />
     <icon texture="%ModDir%/Content/UI/HazardousIconsAtlas.png" sourcerect="512,0,128,128" color="139,60,42,255" origin="0,0" />
   </Affliction>
+  
+  -->
   
   <Affliction
     name=""
@@ -514,45 +552,58 @@
     treatmentthreshold="0"
     minstrength="0"
     maxstrength="300"
-    iconcolors="255,255,0,255">>
+    iconcolors="255,255,0,255">
+    
     <Effect minstrength="0" maxstrength="60" strengthchange="-0.2" />
-    <Effect minstrength="60" maxstrength="120" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="0" MaxScreenBlur="0.5">
-      <StatusEffect target="Character">
-        <Affliction identifier="burn" amount="0.05" />
-        <Affliction identifier="bloodvomit" amount="1" />
-        <Affliction identifier="dnadamage" amount="0.15" />
-        <Affliction identifier="lethalradiation" amount="2" />
-        <Affliction identifier="organdamage" strength="0.05" />
-        <Affliction identifier="radiationgeiger" amount="7" />
-        <ReduceAffliction identifier="antiradeffect" amount="9000" />
-        <ReduceAffliction identifier="radiationsickness" amount="9000" />
+    <Effect minstrength="60" maxstrength="120" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="2" MaxScreenBlur="2" resistancefor="radiationsickness" minresistance="1" maxresistance="1" >
+      <StatusEffect target="Character" delay="1" stackable="false">
+        <Affliction identifier="burn" amount="2" />
+        <Affliction identifier="dnadamage" amount="24" />
+        <Affliction identifier="lethalradiation" amount="200" />
+        <Affliction identifier="organdamage" strength="3" />
+      </StatusEffect>
+      <StatusEffect target="Character" >
+        <Affliction identifier="radiationgeiger" amount="8" />
+      </StatusEffect>
+      <StatusEffect target="Character" stackable="false">
+        <ReduceAffliction identifier="radiationsickness" amount="200" />
+        <ReduceAffliction identifier="antiradeffect" amount="200" />
+      </StatusEffect>
+      <StatusEffect target="Character" stackable="false">
+        <Affliction identifier="bloodvomit" amount="100" />
       </StatusEffect>
       <StatusEffect target="Character" SpeedMultiplier="0.8" setvalue="true" />
     </Effect>
-    <Effect minstrength="120" maxstrength="240" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="0.5" MinScreenBlur="2" MaxScreenBlur="0.75">
-      <StatusEffect target="Character">
-        <Affliction identifier="burn" amount="0.02" />
-        <Affliction identifier="bloodvomit" amount="1" />
-        <Affliction identifier="dnadamage" amount="0.2" />
-        <Affliction identifier="lethalradiation" amount="2" />
-        <Affliction identifier="organdamage" strength="0.1" /> 
-        <Affliction identifier="radiationgeiger" amount="7" />
-        <ReduceAffliction identifier="radiationsickness" amount="9000" />
-        <ReduceAffliction identifier="antiradeffect" amount="9000" />
+    <Effect minstrength="120" maxstrength="240" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="2" MaxScreenBlur="2" resistancefor="radiationsickness" minresistance="1" maxresistance="1" >
+      <StatusEffect target="Character" delay="1" stackable="false">
+        <Affliction identifier="burn" amount="2" />
+        <Affliction identifier="dnadamage" amount="40" />
+        <Affliction identifier="lethalradiation" amount="200" />
+        <Affliction identifier="organdamage" strength="5" /> 
+      </StatusEffect>
+      <StatusEffect target="Character" >
+        <Affliction identifier="radiationgeiger" amount="8" />
+      </StatusEffect>
+      <StatusEffect target="Character" stackable="false">
+        <Affliction identifier="bloodvomit" amount="100" />
       </StatusEffect>
       <StatusEffect target="Character" SpeedMultiplier="0.6" setvalue="true" />
     </Effect>
-    <Effect minstrength="240" maxstrength="300" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="0.75" MaxScreenBlur="1">
-      <StatusEffect target="Character">
-        <Affliction identifier="burn" amount="0.02" />
-        <Affliction identifier="bloodvomit" amount="1" />
-        <Affliction identifier="dnadamage" amount="0.3" />
-        <Affliction identifier="organdamage" strength="0.01" /> 
-        <Affliction identifier="lethalradiation" amount="2" />
-        <Affliction identifier="radiationgeiger" amount="7" />
+    <Effect minstrength="240" maxstrength="300" minchromaticaberration="2" maxchromaticaberration="2" mingrainstrength="2" maxgrainstrength="2" MinScreenBlur="2" MaxScreenBlur="2" resistancefor="radiationsickness" minresistance="1" maxresistance="1" >
+      <StatusEffect target="Character" delay="1" stackable="false">
+        <Affliction identifier="burn" amount="4" />
+        <Affliction identifier="dnadamage" amount="80" />
+        <Affliction identifier="organdamage" strength="7" /> 
+        <Affliction identifier="lethalradiation" amount="200" /> 
+      </StatusEffect>
+      <StatusEffect target="Character" >
+        <Affliction identifier="radiationgeiger" amount="8" />
+      </StatusEffect>
+      <StatusEffect target="Character" setvalue="true" stackable="false">
         <Affliction identifier="stun" amount="5" />
-        <ReduceAffliction identifier="radiationsickness" amount="9000" />
-        <ReduceAffliction identifier="antiradeffect" amount="9000" />
+      </StatusEffect>
+      <StatusEffect target="Character" stackable="false">
+        <Affliction identifier="bloodvomit" amount="100" />
       </StatusEffect>
       <StatusEffect target="Character" SpeedMultiplier="0.4" setvalue="true" />
     </Effect>

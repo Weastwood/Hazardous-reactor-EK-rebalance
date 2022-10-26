@@ -178,34 +178,34 @@
       
       <!-- PASSIVE RADIATION EFFECT -->
       
-      <StatusEffect type="OnActive" target="This" delay="0.5" disabledeltatime="true" stackable="false" comparison="And">
+      <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <Conditional condition="lte 90" />
         <Conditional condition="gte 75" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="radiationsickness" strength="0.5" />
-          <Affliction identifier="radiationgeiger" strength="0.5" />
+          <Affliction identifier="radiationgeiger" strength="1" />
         </Explosion>
       </StatusEffect>
       
-      <StatusEffect type="OnActive" target="This" delay="0.5" disabledeltatime="true" stackable="false" comparison="And">
+      <StatusEffect type="OnActive" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <Conditional condition="lte 75" />
         <Conditional condition="gte 50" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
           <Affliction identifier="radiationsickness" strength="1" />
-          <Affliction identifier="radiationgeiger" strength="1" />
+          <Affliction identifier="radiationgeiger" strength="2" />
         </Explosion>
       </StatusEffect>
       
-      <StatusEffect type="Always" target="This" delay="0.5" disabledeltatime="true" stackable="false" comparison="And">
+      <StatusEffect type="Always" target="This" delay="1" disabledeltatime="true" stackable="false" comparison="And">
         <Conditional condition="lte 50" />
         <Conditional condition="gte 25" />
         <Conditional targetitemcomponent="Reactor" temperature="gt 2" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false" delay="1" stackable="false">
-          <Affliction identifier="radiationsickness" strength="2" />
-           <Affliction identifier="radiationgeiger" strength="2" />
-          <Affliction identifier="contamination" strength="2" />
+          <Affliction identifier="radiationsickness" strength="4" />
+           <Affliction identifier="radiationgeiger" strength="4" />
+          <Affliction identifier="contamination" strength="4" />
         </Explosion>
       </StatusEffect>
       
@@ -224,12 +224,12 @@
         <ParticleEmitter particle="swirlysmoke" particlespersecond="3" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
         <Conditional condition="e 0" />
       </StatusEffect>
-      <StatusEffect type="Always" target="This" stackable="false" delay="0.5">
+      <StatusEffect type="Always" target="This" stackable="false" delay="1">
         <Conditional condition="e 0" />
         <Explosion range="500" structuredamage="0" force="0.001" flames="false" sparks="false" shockwave="false" camerashake="0" ignorecover="false" smoke="false" flashrange="0" underwaterbubble="false">
-          <Affliction identifier="radiationsickness" strength="20" />
-          <Affliction identifier="radiationgeiger" strength="20" />
-          <Affliction identifier="contamination" strength="10" />
+          <Affliction identifier="radiationsickness" strength="40" />
+          <Affliction identifier="radiationgeiger" strength="40" />
+          <Affliction identifier="contamination" strength="20" />
         </Explosion>
       </StatusEffect>
       

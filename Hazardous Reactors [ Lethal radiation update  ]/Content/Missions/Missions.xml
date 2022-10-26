@@ -11,7 +11,7 @@
     spawntype="wreck"
     showmessagewhenpickedup="true"
     itemidentifier="nukerodenhanced"
-    containertag="securecontainer"
+    containertag="container"
     requirewreck="true">
 
     <Reputation identifier="location" amount="10" />
