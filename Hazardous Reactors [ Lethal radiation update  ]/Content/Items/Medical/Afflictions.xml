@@ -451,7 +451,7 @@
       <StatusEffect target="Character">
         <Affliction identifier="organdamage" strength="0.5" />
         <Affliction identifier="bloodloss" strength="5" />
-        <ReduceAffliction identifier="bloodloss" strength="50" />
+        <ReduceAffliction identifier="bloodvomit" strength="50" />
       </StatusEffect>
       <StatusEffect target="Character" targetlimbs="Head" duration="1">
         <ParticleEmitter particle="bloodvomitsplash" copyentityangle="true" anglemin="-10" anglemax="10" particlespersecond="50" velocitymin="50" velocitymax="200" scalemin="0.1" scalemax="0.2" />

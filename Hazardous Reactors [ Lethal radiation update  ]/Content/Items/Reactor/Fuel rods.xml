@@ -1121,7 +1121,7 @@
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" condition="-10" />
       <StatusEffect type="OnBroken" target="This">
-        <sound file="%ModDir%/Content/Items/Misc/ProximaBeamShot.ogg" range="8000" dontmuffle="true" />
+        <sound file="%ModDir%/Content/Items/Misc/ProximaBeamShot.ogg" range="80000" dontmuffle="true" />
         <Explosion range="3000" structuredamage="100" force="4" flashrange="20000" flashduration="10" screencolor="255,255,255,255" screencolorrange="8000" screencolorduration="10.0" ignorecover="false" stackable="false" camerashake="2000">
           <Affliction identifier="burn" strength="2500" />
           <Affliction identifier="explosiondamage" strength="1500" />
@@ -1169,12 +1169,12 @@
       <StatusEffect type="OnImpact" target="This" disabledeltatime="true" stackable="false">
         <use />
       </StatusEffect>
-      <StatusEffect type="OnUse" target="This" condition="-10" delay="1" >
+      <!--  TO DO LATER   <StatusEffect type="OnUse" target="This" condition="-10" delay="1" >
         <SpawnItem identifier="vacuumcollapse" spawnposition="This"/>
-      </StatusEffect>
+      </StatusEffect> -->
       <StatusEffect type="OnUse" target="This" condition="-10" />
       <StatusEffect type="OnBroken" target="This">
-        <sound file="%ModDir%/Content/Items/Misc/ProximaBeamShot.ogg" range="8000" dontmuffle="true" />
+        <sound file="%ModDir%/Content/Items/Misc/ProximaBeamShot.ogg" range="80000" dontmuffle="true" />
         <Explosion range="3000" structuredamage="50" force="4" flashrange="10000" flashduration="8" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" ignorecover="false" stackable="false" camerashake="20">
           <Affliction identifier="burn" strength="3500" />
           <Affliction identifier="explosiondamage" strength="2500" />
