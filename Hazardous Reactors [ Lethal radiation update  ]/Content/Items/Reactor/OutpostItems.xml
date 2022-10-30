@@ -485,8 +485,8 @@
     
     <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="720" MinDeteriorationCondition="0" minsabotagecondition="10" RepairThreshold="80" fixDurationHighSkill="30" fixDurationLowSkill="60" msg="ItemMsgRepairWrench" hudpriority="10">
       <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,216" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
-      <RequiredSkill identifier="electrical" level="75" />
-      <RequiredSkill identifier="mechanical" level="50" />
+      <RequiredSkill identifier="electrical" level="170" />
+      <RequiredSkill identifier="mechanical" level="60" />
       <RequiredItem items="wrench" type="equipped" />
       <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
       <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
